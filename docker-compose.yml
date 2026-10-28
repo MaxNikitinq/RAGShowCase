@@ -1,0 +1,40 @@
+services:
+  postgres:
+    # Postgres with pgvector
+    image: pgvector/pgvector:0.8.7-pg18-trixie
+    container_name: postgres-pgvector
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: dev_user
+      POSTGRES_PASSWORD: dev_password
+      POSTGRES_DB: embedding_db
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.37.0
+    container_name: azurite
+    restart: always
+    # even latest Azurite version supports up to Azure Storage API version 2026-06-06
+    command: azurite --loose --blobHost 0.0.0.0 --blobPort 10000 --queueHost 0.0.0.0 --queuePort 10001 --tableHost 0.0.0.0 --tablePort 10002 --skipApiVersionCheck
+    ports:
+      - "10000:10000" # Blob Service
+      - "10001:10001" # Queue Service
+      - "10002:10002" # Table Service
+    volumes:
+      - azurite_data:/data
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  azurite_data:
+  ollama:

@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Function/">
+    <Project Path="RAGShowCaseService.DocumentProcessor/RAGShowCaseService.DocumentProcessor.csproj" Id="6888250a-e362-4b66-92a6-8ff88dac4b09" />
+  </Folder>
+  <Folder Name="/Service/">
+    <Project Path="RAGShowCaseService.Api/RAGShowCaseService.Api.csproj" />
+    <Project Path="RAGShowCaseService.Application/RAGShowCaseService.Application.csproj" Id="7e9877f4-fe80-467a-8c86-05395e8d7c9f" />
+    <Project Path="RAGShowCaseService.Core/RAGShowCaseService.Core.csproj" Id="356905ce-f13d-4709-a3fe-7a8b8430f44f" />
+    <Project Path="RAGShowCaseService.Infrastructure/RAGShowCaseService.Infrastructure.csproj" Id="5783bcdc-fac6-4ccd-bc0a-a0c4d6685155" />
+  </Folder>
+</Solution>
