@@ -8,4 +8,7 @@
     <Project Path="RAGShowCaseService.Core/RAGShowCaseService.Core.csproj" Id="356905ce-f13d-4709-a3fe-7a8b8430f44f" />
     <Project Path="RAGShowCaseService.Infrastructure/RAGShowCaseService.Infrastructure.csproj" Id="5783bcdc-fac6-4ccd-bc0a-a0c4d6685155" />
   </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="RAGShowCaseService.Tests/RAGShowCaseService.Tests.csproj" />
+  </Folder>
 </Solution>
